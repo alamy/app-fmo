@@ -1,0 +1,22 @@
+[
+  {"nome": "Anderson", "CIM": "1001", "Grau": "Mestre", "Data de Nascimento": "1982-05-14"},
+  {"nome": "Jonas Adriano", "CIM": "1002", "Grau": "Mestre", "Data de Nascimento": "1990-11-23"},
+  {"nome": "Walmir Soares", "CIM": "1003", "Grau": "Mestre", "Data de Nascimento": "1975-03-09"},
+  {"nome": "Carlos Fernandes Cuca", "CIM": "1005", "Grau": "Mestre", "Data de Nascimento": "1988-01-17"},
+  {"nome": "Gerson Alves", "CIM": "1007", "Grau": "Mestre", "Data de Nascimento": "1992-12-12"},
+  {"nome": "Marcílio dion", "CIM": "10535", "Grau": "Companheiro", "Data de Nascimento": ""},
+  {"nome": "Márcio Maia 17", "CIM": "", "Grau": "Companheiro", "Data de Nascimento": ""},
+  {"nome": "Mauro Miguelito", "CIM": "8943", "Grau": "Companheiro", "Data de Nascimento": ""},
+  {"nome": "André Félix", "CIM": "10534", "Grau": "Companheiro", "Data de Nascimento": "1995-07-30"},
+  {"nome": "Gutenberg bezerra", "CIM": "", "Grau": "Aprendiz", "Data de Nascimento": ""},
+  {"nome": "Kadima", "CIM": "", "Grau": "Aprendiz", "Data de Nascimento": ""},
+  {"nome": "Lucas Calmo", "CIM": "", "Grau": "Aprendiz", "Data de Nascimento": ""},
+  {"nome": "LUCAS ECONODIREITO", "CIM": "", "Grau": "Aprendiz", "Data de Nascimento": ""},
+  {"nome": "mokidbone", "CIM": "", "Grau": "Aprendiz", "Data de Nascimento": ""},
+  {"nome": "Rodrigo Ferreira", "CIM": "", "Grau": "Aprendiz", "Data de Nascimento": ""},
+  {"nome": "Elderson Luis L. Melo", "CIM": "1006", "Grau": "Aprendiz", "Data de Nascimento": "1979-09-25"},
+  {"nome": "Manoel Rodolfo", "CIM": "1008", "Grau": "Aprendiz", "Data de Nascimento": "1985-04-04"},
+  {"nome": "Marinaldo Silva", "CIM": "1009", "Grau": "Aprendiz", "Data de Nascimento": "1980-08-19"},
+  {"nome": "Alamy Verissimo", "CIM": "10577", "Grau": "Aprendiz", "Data de Nascimento": "1993-06-21"},
+  {"nome": "Adelson", "CIM": "1010", "Grau": "Aprendiz", "Data de Nascimento": "1993-06-21"}
+]

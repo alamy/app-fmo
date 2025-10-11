@@ -1,51 +1,41 @@
+
+
+
 import React, { useState } from 'react';
 import './style.css';
-
+import postsData from '../../post.json';
+import Header from '../../component/Header';
 
 function Loja() {
-  const [cim, setCim] = useState('');
-  const [pass, setPass] = useState('');
-  const [error, setError] = useState('');
-  const [logged, setLogged] = useState(false);
+  const [posts, setPosts] = useState(postsData.slice().reverse()); // mais recente primeiro
+  const [novoPost, setNovoPost] = useState('');
+  const [postError, setPostError] = useState('');
 
-  const handleLogin = (e) => {
+  // Pega usuário do Header via contexto
+  const podePostar = window.localStorage.getItem('usuario') !== null;
+  // Função para adicionar novo post
+  const usuario = JSON.parse(window.localStorage.getItem('usuario') || 'null');
+  const handleNovoPost = (e) => {
     e.preventDefault();
-    if (pass === 'xxx') {
-      setLogged(true);
-      setError('');
-    } else {
-      setError('Palavra Passe incorreta.');
+    if (!novoPost.trim()) {
+      setPostError('Digite uma mensagem.');
+      return;
     }
+    // Adiciona novo post ao topo
+    const novo = {
+      autor: usuario ? usuario.nome : 'Convidado',
+      conteudo: novoPost,
+      data: new Date().toISOString(),
+    };
+    setPosts([novo, ...posts]);
+    setNovoPost('');
+    setPostError('');
+    // Aqui seria necessário salvar no backend/arquivo para persistência real
   };
 
-  if (!logged) {
-    return (
-      <main className="inicio-container">
-        <h1>Login da Loja</h1>
-        <form className="contact-form" onSubmit={handleLogin} style={{maxWidth: 340}}>
-          <label>
-            CIM (opcional)
-            <input type="number" value={cim} onChange={e => setCim(e.target.value)} placeholder="Seu CIM" />
-          </label>
-          <label>
-            Palavra Passe <span style={{color: 'red'}}>*</span>
-            <input type="password" value={pass} onChange={e => setPass(e.target.value)} required placeholder="Digite a palavra passe" />
-          </label>
-          {error && <div style={{color: 'red', marginBottom: 8}}>{error}</div>}
-          <button type="submit" className="btn-primary">Entrar</button>
-        </form>
-      </main>
-    );
-  }
-
-  // Área interna da Loja - layout tipo rede social
   return (
     <div className="loja-social-layout">
-      {/* Topbar */}
-      <header className="loja-topbar">
-        <div className="loja-logo">Loja Nº 43</div>
-        <div className="loja-user">Usuário logado</div>
-      </header>
+      <Header />
       <div className="loja-main-content">
         {/* Sidebar */}
         <nav className="loja-sidebar">
@@ -59,21 +49,29 @@ function Loja() {
         {/* Feed */}
         <section className="loja-feed">
           <div className="loja-feed-header">Feed da Loja</div>
-          <div className="loja-post">
-            <div className="loja-post-author">Venerável Mestre</div>
-            <div className="loja-post-content">Bem-vindos à nossa rede social interna! Compartilhe novidades, eventos e mensagens com os irmãos.</div>
-            <div className="loja-post-date">há 2 horas</div>
-          </div>
-          <div className="loja-post">
-            <div className="loja-post-author">Secretaria</div>
-            <div className="loja-post-content">Reunião extraordinária nesta sexta-feira às 20h. Confirme presença!</div>
-            <div className="loja-post-date">há 1 dia</div>
-          </div>
-          <div className="loja-post">
-            <div className="loja-post-author">Irmão Silva</div>
-            <div className="loja-post-content">Parabéns aos iniciados do último mês! 👏</div>
-            <div className="loja-post-date">há 3 dias</div>
-          </div>
+          {posts.map((post, idx) => (
+            <div className="loja-post" key={idx}>
+              <div className="loja-post-author">{post.autor}</div>
+              <div className="loja-post-content">{post.conteudo}</div>
+              <div className="loja-post-date">{new Date(post.data).toLocaleString('pt-BR', {dateStyle:'short', timeStyle:'short'})}</div>
+            </div>
+          ))}
+          {/* Caixa de novo post só para quem tem CIM */}
+          {podePostar && (
+            <form className="loja-novo-post" onSubmit={handleNovoPost} style={{marginTop:24}}>
+              <textarea
+                value={novoPost}
+                onChange={e => setNovoPost(e.target.value)}
+                placeholder="Escreva um comentário ou novidade..."
+                style={{width:'100%', minHeight:60, borderRadius:6, border:'1px solid #ccc', padding:8}}
+              />
+              {postError && <div style={{color:'red', marginBottom:6}}>{postError}</div>}
+              <button type="submit" className="btn-primary" style={{marginTop:6}}>Publicar</button>
+            </form>
+          )}
+          {!podePostar && (
+            <div style={{marginTop:24, color:'#888', fontSize:13, textAlign:'center'}}>Apenas membros autenticados podem publicar.</div>
+          )}
         </section>
       </div>
     </div>
