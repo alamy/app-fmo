@@ -47,8 +47,7 @@ function Ritual() {
     </span>
   );
 
-  // Detecta se menu está recolhido
-  const isCollapsed = menuRef.current?.classList.contains('collapsed');
+  // Detecta se menu está recolhid
 
   // Navegação anterior/próximo capítulo
   const capIdx = ritualData.capitulos.findIndex(c => c.id === selected);
