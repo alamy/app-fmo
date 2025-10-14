@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import usuarios from '../../usuarios.json';
+
 import html2canvas from 'html2canvas';
 
 function getRandomStep() {
