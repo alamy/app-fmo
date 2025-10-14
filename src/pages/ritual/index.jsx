@@ -99,7 +99,7 @@ function Ritual() {
         {/* Exibe nome do usuário autenticado, se houver */}
         {usuario && (
           <div className="ritual-usuario-logado">
-            Irmão: {usuario.nome} <span style={{fontSize:12, color:'#bfa13a'}}>({usuario.Grau})</span>
+            Irmão: {usuario?.nome} <span style={{fontSize:12, color:'#bfa13a'}}>({usuario?.Grau})</span>
           </div>
         )}
         <div className="ritual-content-box">
