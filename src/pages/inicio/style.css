@@ -1,26 +1,37 @@
 /* Basic layout for the inicio page */
 .inicio-container {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  color: #222;
+  color: #ffffff;
+
   padding: 24px;
-  max-width: 980px;
+  max-width: 100vw;
   margin: 0 auto;
+    
+background-color: #3d3d3d;
 }
 
 .hero { 
-  background: linear-gradient(135deg, #f6f5ff 0%, #eef7ff 100%);
+  
   border-radius: 8px;
   padding: 28px;
+  background-color: #000;
   margin-bottom: 20px;
+
 }
 .hero-inner h1 { font-size: 26px; margin: 0 0 8px; }
-.subtitle { color: #444; margin: 0 0 12px; font-weight: 600; }
-.lead { color: #555; margin: 0 0 4px; }
+.subtitle { color: #e2e2e2; margin: 0 0 12px; font-weight: 600; }
+.lead { color: #cdcdcd; margin: 0 0 4px; text-align: justify; }
 
 .about { margin-bottom: 20px; }
 .about h2 { margin-top: 0; }
 
-.form-section { background: #fff; border: 1px solid #eee; padding: 18px; border-radius: 8px; }
+.form-section {  background: #051f63; /* substitui pela tua imagem */
+      height: 100vh;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    padding: 20px;}
 .contact-form { display: grid; gap: 10px; }
 .contact-form label { display: flex; flex-direction: column; font-size: 14px; color: #333; }
 .contact-form input,
@@ -36,4 +47,14 @@
   .inicio-container { padding: 18px; }
   .hero-inner h1 { font-size: 20px; }
   .actions { flex-direction: column; }
+}
+
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }

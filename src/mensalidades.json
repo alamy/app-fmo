@@ -1,0 +1,74 @@
+[
+  {
+    "mes": "04",
+    "ano": "2025",
+    "mesFechado": true,
+    "valor": 120,
+    "irmaos": ["1001","1002","1003","1004","1005","1006","1007","1008","1009","1010"],
+    "pagos": ["1001","1002","1003","1004","1005","1006","1007","1009","1010"],
+    "statusUsuarios": {
+      "1001": "regular", "1002": "regular", "1003": "regular", "1004": "regular", "1005": "regular", "1006": "regular", "1007": "regular", "1008": "irregular", "1009": "regular", "1010": "regular"
+    },
+    "tronco": 0
+  },
+  {
+    "mes": "05",
+    "ano": "2025",
+    "mesFechado": true,
+    "valor": 120,
+    "irmaos": ["1001","1002","1003","1004","1005","1006","1007","1008","1009","1010"],
+    "pagos": ["1001","1002","1003","1004","1005","1006","1007","1008","1009"],
+    "statusUsuarios": {
+      "1001": "regular", "1002": "regular", "1003": "regular", "1004": "regular", "1005": "regular", "1006": "regular", "1007": "regular", "1008": "regular", "1009": "regular", "1010": "irregular"
+    },
+    "tronco": 0
+  },
+  {
+    "mes": "06",
+    "ano": "2025",
+    "mesFechado": true,
+    "valor": 120,
+    "irmaos": ["1001","1002","1003","1004","1005","1006","1007","1008","1009","1010"],
+    "pagos": ["1001","1003"],
+    "statusUsuarios": {
+      "1001": "regular", "1002": "irregular", "1003": "regular", "1004": "irregular", "1005": "irregular", "1006": "irregular", "1007": "irregular", "1008": "irregular", "1009": "irregular", "1010": "irregular"
+    },
+    "tronco": 0
+  },
+  {
+    "mes": "07",
+    "ano": "2025",
+    "mesFechado": true,
+    "valor": 120,
+    "irmaos": ["1001","1002","1003","1004","1005","1006","1007","1008","1009","1010"],
+    "pagos": ["1002","1004","1006","1008","1010"],
+    "statusUsuarios": {
+      "1001": "irregular", "1002": "regular", "1003": "irregular", "1004": "regular", "1005": "irregular", "1006": "regular", "1007": "irregular", "1008": "regular", "1009": "irregular", "1010": "regular"
+    },
+    "tronco": 0
+  },
+  {
+    "mes": "08",
+    "ano": "2025",
+    "mesFechado": false,
+    "valor": 120,
+    "irmaos": ["1001","1002","1003","1004","1005","1006","1007","1008","1009","1010"],
+    "pagos": ["1003","1005","1007","1009","1010"],
+    "statusUsuarios": {
+      "1001": "irregular", "1002": "irregular", "1003": "regular", "1004": "irregular", "1005": "regular", "1006": "irregular", "1007": "regular", "1008": "irregular", "1009": "regular", "1010": "regular"
+    },
+    "tronco": 0
+  },
+  {
+    "mes": "09",
+    "ano": "2025",
+    "mesFechado": false,
+    "valor": 120,
+    "irmaos": ["1001","1002","1003","1004","1005","1006","1007","1008","1009","1010"],
+    "pagos": ["1001","1002","1003","1004","1005","1006","1007","1008","1010"],
+    "statusUsuarios": {
+      "1001": "regular", "1002": "regular", "1003": "regular", "1004": "regular", "1005": "regular", "1006": "regular", "1007": "regular", "1008": "regular", "1009": "irregular", "1010": "regular"
+    },
+    "tronco": 0
+  }
+]
