@@ -102,12 +102,22 @@ function Ritual() {
             Irmão: {usuario.nome} <span style={{fontSize:12, color:'#bfa13a'}}>({usuario.Grau})</span>
           </div>
         )}
-        <article
-          className="ritual-article"
-          tabIndex={0}
-          aria-label={selectedCap?.titulo}
-          dangerouslySetInnerHTML={{ __html: selectedCap?.conteudo || '<p>Selecione um capítulo.</p>' }}
-        />
+        <div className="ritual-content-box">
+          {selectedCap && (
+            <h2 className="ritual-content-title" style={{textAlign:'center', fontWeight:700, fontSize:'1.6em', marginBottom:18, color:'#bfa13a'}}>{selectedCap.titulo}</h2>
+          )}
+          <article
+            className="ritual-article"
+            tabIndex={0}
+            aria-label={selectedCap?.titulo}
+            dangerouslySetInnerHTML={{ __html: selectedCap?.conteudo || '<p>Selecione um capítulo.</p>' }}
+          />
+          {selectedCap && (
+            <div className="ritual-content-footer" style={{textAlign:'center', marginTop:32, color:'#bfa13a', fontWeight:600, fontSize:'1.1em', letterSpacing:1}}>
+              Página {selectedCap.id}
+            </div>
+          )}
+        </div>
         {/* Navegação anterior/próximo capítulo */}
         <div className="ritual-nav-btns">
           <button onClick={() => prevCap && setSelected(prevCap.id)} disabled={!prevCap}>&larr; Anterior</button>

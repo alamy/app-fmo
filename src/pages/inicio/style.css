@@ -20,7 +20,7 @@ background-color: #3d3d3d;
 }
 .hero-inner h1 { font-size: 26px; margin: 0 0 8px; }
 .subtitle { color: #e2e2e2; margin: 0 0 12px; font-weight: 600; }
-.lead { color: #cdcdcd; margin: 0 0 4px; }
+.lead { color: #cdcdcd; margin: 0 0 4px; text-align: justify; }
 
 .about { margin-bottom: 20px; }
 .about h2 { margin-top: 0; }

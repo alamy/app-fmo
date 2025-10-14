@@ -4,6 +4,7 @@ import Inicio from './pages/inicio/index.jsx';
 import Loja from './pages/loja/index.jsx';
 import Ritual from './pages/ritual/index.jsx';
 import Secretaria from './pages/secretaria/index.jsx';
+import Recibo from './pages/recibo/index.jsx';
 import Login from './pages/login/index.jsx';
 import { useAuth } from './AuthContext';
 
@@ -36,8 +37,9 @@ const AppRoutes = () => (
           <Secretaria />
         </RequireAuth>
       } />
-      {/* Redireciona / para /inicio */}
-      <Route path="/" element={<Inicio />} />
+  <Route path="/recibo" element={<Recibo />} />
+  {/* Redireciona / para /inicio */}
+  <Route path="/" element={<Inicio />} />
     </Routes>
   </BrowserRouter>
 );
