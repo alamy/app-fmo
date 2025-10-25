@@ -6,6 +6,7 @@ import Ritual from './pages/ritual/index.jsx';
 import Secretaria from './pages/secretaria/index.jsx';
 import Recibo from './pages/recibo/index.jsx';
 import Login from './pages/login/index.jsx';
+import UsuariosPage from './pages/usuarios';
 import { useAuth } from './AuthContext';
 
 function RequireAuth({ children }) {
@@ -37,7 +38,8 @@ const AppRoutes = () => (
           <Secretaria />
         </RequireAuth>
       } />
-  <Route path="/recibo" element={<Recibo />} />
+    <Route path="/recibo" element={<Recibo />} />
+    <Route path="/usuarios" element={<UsuariosPage />} />
   {/* Redireciona / para /inicio */}
   <Route path="/" element={<Inicio />} />
     </Routes>
