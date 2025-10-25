@@ -1,94 +1,76 @@
 
+
 # app-fmo
 
-Sistema de Gestão para Loja Maçônica
+🚀 **Sistema de Gestão Maçônica — React.js Moderno & Profissional**
 
-## Descrição
+## Sobre o Projeto
 
-Este projeto é uma aplicação web desenvolvida em React para controle de usuários, mensalidades, pagamentos, recibos e integração com backend NestJS. O sistema é modular, responsivo e preparado para funcionar como PWA (Progressive Web App).
+Este projeto é uma aplicação web robusta, desenvolvida com React.js, voltada para gestão de usuários, pagamentos e mensalidades em uma loja maçônica. O sistema destaca-se por arquitetura modular, integração com backend NestJS, experiência PWA e foco em usabilidade e segurança.
 
-## Tecnologias Utilizadas
-- React (JSX)
-- React Router DOM
-- Axios
-- NestJS (backend, não incluso neste repositório)
-- CSS customizado
-- ESLint
-- PWA (manifest.json)
+## Principais Diferenciais
+- **Stack Moderno:** React.js, React Router, Axios, ESLint, PWA
+- **Clean Code:** Componentização, hooks, services, separação de responsabilidades
+- **UX/UI Profissional:** Layout responsivo, modal dinâmico, feedback visual, design inspirado nas cores do Facebook
+- **Integração API:** CRUD completo via Axios com backend NestJS
+- **Segurança:** Controle de senha, autenticação, edição restrita por perfil
+- **PWA Ready:** Instale no celular e use offline
 
-## Estrutura de Pastas
-```
-├── public/
-│   └── index.html, manifest.json, robots.txt
-├── src/
-│   ├── App.js, App.css, index.js, index.css
-│   ├── assets/
-│   ├── component/
-│   ├── pages/
-│   │   ├── usuarios/
-│   │   │   ├── Crud.jsx, style.css, index.jsx
-│   │   ├── loja/, ritual/, secretaria/, recibo/, login/, inicio/
-│   ├── services/
-│   │   └── usuarioService.js
-│   ├── types/
-│   ├── mensalidades.json, usuarios.json, post.json
-│   ├── routes.js, routes.tsx
-├── package.json
-├── README.md
-```
-
-## Funcionalidades
-- CRUD completo de usuários (nome, CIM, grau, celular, senha)
-- Visualização detalhada do usuário em modal, com edição de senha
-- Integração com backend NestJS via Axios (`http://localhost:1411/users`)
+## Funcionalidades Técnicas
+- Cadastro, edição, exclusão e visualização de usuários (nome, matrícula/CIM, grau, celular, senha)
+- Modal para visualização e alteração de senha do usuário
+- Dashboard Secretaria com gráficos mockados e bloqueios de edição
 - Controle de mensalidades e arrecadação extra (campo "tronco")
-- Dashboard Secretaria com gráficos (mock)
-- Autenticação e controle de acesso
-- PWA: instalação em dispositivos móveis
+- Rotas protegidas e navegação fluida
 
-## Instalação
-1. Clone o repositório:
-	 ```sh
-	 git clone https://github.com/alamy/app-fmo.git
-	 cd app-fmo
-	 ```
-2. Instale as dependências:
-	 ```sh
-	 npm install
-	 ```
-3. Inicie o frontend:
-	 ```sh
-	 npm start
-	 ```
-4. Certifique-se de que o backend NestJS está rodando em `http://localhost:1411`.
+## Estrutura do Projeto
+```
+src/
+├── pages/
+│   ├── usuarios/
+│   │   ├── Crud.jsx (CRUD com modal)
+│   │   ├── style.css
+│   │   └── index.jsx
+│   ├── loja/, ritual/, secretaria/, recibo/, login/, inicio/
+├── services/
+│   └── usuarioService.js (Axios CRUD)
+├── assets/, component/, types/
+├── mensalidades.json, usuarios.json
+├── routes.js, routes.tsx
+public/
+├── manifest.json (PWA)
+```
 
-## Uso
-- Acesse `http://localhost:3000` no navegador
-- Navegue pelas rotas:
-	- `/usuarios` — CRUD de usuários
-	- `/loja`, `/ritual`, `/secretaria`, `/recibo`, `/login`, `/inicio`
-- Para editar ou visualizar usuários, utilize os botões na tabela
-- Para instalar como PWA, utilize o botão de instalação no navegador
+## Como Executar
+```sh
+git clone https://github.com/alamy/app-fmo.git
+cd app-fmo
+npm install
+npm start
+```
+Backend NestJS deve estar rodando em `http://localhost:1411`.
 
-## API Usuários
-- **GET** `/users` — Lista todos os usuários
-- **GET** `/users/:id` — Busca usuário por ID
-- **POST** `/users` — Cria usuário
-- **PUT** `/users/:id` — Atualiza usuário
-- **DELETE** `/users/:id` — Remove usuário
+## Demonstração
+- CRUD de usuários com modal de visualização/edição de senha
+- Dashboard Secretaria com gráficos e bloqueios
+- Instalação PWA no navegador
 
-## Testes e Lint
-- Para rodar testes:
-	```sh
-	npm test
-	```
-- Para verificar lint:
-	```sh
-	npm run lint
-	```
+## API Usuários (NestJS)
+- `GET /users` — Lista todos os usuários
+- `GET /users/:id` — Busca usuário por ID
+- `POST /users` — Cria usuário
+- `PUT /users/:id` — Atualiza usuário
+- `DELETE /users/:id` — Remove usuário
 
-## Contribuição
-Pull requests são bem-vindos. Para grandes mudanças, abra uma issue primeiro para discutir o que deseja modificar.
+## Testes & Qualidade
+- Testes automatizados: `npm test`
+- Lint e qualidade: `npm run lint`
+
+## Por que avaliar este projeto?
+- Demonstra domínio de React.js moderno, hooks, integração API, PWA e boas práticas
+- Código limpo, escalável e fácil de manter
+- Foco em experiência do usuário e segurança
+- Pronto para evoluir: fácil integração com outros sistemas
 
 ## Licença
 MIT
