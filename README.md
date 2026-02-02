@@ -1,70 +1,76 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# app-fmo
 
-In the project directory, you can run:
+🚀 **Sistema de Gestão Maçônica — React.js Moderno & Profissional**
 
-### `npm start`
+## Sobre o Projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Este projeto é uma aplicação web robusta, desenvolvida com React.js, voltada para gestão de usuários, pagamentos e mensalidades em uma loja maçônica. O sistema destaca-se por arquitetura modular, integração com backend NestJS, experiência PWA e foco em usabilidade e segurança.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Principais Diferenciais
+- **Stack Moderno:** React.js, React Router, Axios, ESLint, PWA
+- **Clean Code:** Componentização, hooks, services, separação de responsabilidades
+- **UX/UI Profissional:** Layout responsivo, modal dinâmico, feedback visual, design inspirado nas cores do Facebook
+- **Integração API:** CRUD completo via Axios com backend NestJS
+- **Segurança:** Controle de senha, autenticação, edição restrita por perfil
+- **PWA Ready:** Instale no celular e use offline
 
-### `npm test`
+## Funcionalidades Técnicas
+- Cadastro, edição, exclusão e visualização de usuários (nome, matrícula/CIM, grau, celular, senha)
+- Modal para visualização e alteração de senha do usuário
+- Dashboard Secretaria com gráficos mockados e bloqueios de edição
+- Controle de mensalidades e arrecadação extra (campo "tronco")
+- Rotas protegidas e navegação fluida
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Estrutura do Projeto
+```
+src/
+├── pages/
+│   ├── usuarios/
+│   │   ├── Crud.jsx (CRUD com modal)
+│   │   ├── style.css
+│   │   └── index.jsx
+│   ├── loja/, ritual/, secretaria/, recibo/, login/, inicio/
+├── services/
+│   └── usuarioService.js (Axios CRUD)
+├── assets/, component/, types/
+├── mensalidades.json, usuarios.json
+├── routes.js, routes.tsx
+public/
+├── manifest.json (PWA)
+```
 
-### `npm run build`
+## Como Executar
+```sh
+git clone https://github.com/alamy/app-fmo.git
+cd app-fmo
+npm install
+npm start
+```
+Backend NestJS deve estar rodando em `http://localhost:1411`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Demonstração
+- CRUD de usuários com modal de visualização/edição de senha
+- Dashboard Secretaria com gráficos e bloqueios
+- Instalação PWA no navegador
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## API Usuários (NestJS)
+- `GET /users` — Lista todos os usuários
+- `GET /users/:id` — Busca usuário por ID
+- `POST /users` — Cria usuário
+- `PUT /users/:id` — Atualiza usuário
+- `DELETE /users/:id` — Remove usuário
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Testes & Qualidade
+- Testes automatizados: `npm test`
+- Lint e qualidade: `npm run lint`
 
-### `npm run eject`
+## Por que avaliar este projeto?
+- Demonstra domínio de React.js moderno, hooks, integração API, PWA e boas práticas
+- Código limpo, escalável e fácil de manter
+- Foco em experiência do usuário e segurança
+- Pronto para evoluir: fácil integração com outros sistemas
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Licença
+MIT
