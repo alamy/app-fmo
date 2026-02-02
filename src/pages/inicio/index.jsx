@@ -142,7 +142,7 @@ function Inicio() {
             Na Flaviano Mendes de Oliveira Nº43, o Rito Schröder pulsa vivo — como chama que ilumina sem ostentar, como martelo que lapida sem ferir, como símbolo eterno de que a verdadeira Luz habita na simplicidade e na virtude..</p>
         </div>
       </section>
-      <section className="about" id="historia">
+      <section className="about" id="historia" style={{ paddingTop: 84 }}>
         <h2>Por que nossa Loja se chama Flaviano Mendes de Oliveira</h2>
         <p>
           A A∴R∴L∴S∴ Flaviano Mendes de Oliveira Nº 43 recebeu este nome em homenagem a um homem de alegria contagiante, talento múltiplo e coração fraterno: o Ir∴ Flaviano Mendes de Oliveira.
@@ -165,7 +165,7 @@ function Inicio() {
         <p>
           Hoje, o Ir∴ Flaviano Mendes de Oliveira habita o Oriente Eterno, mas sua memória permanece viva entre nós. O nome de nossa Loja é, portanto, uma justa homenagem a este irmão querido, cuja vida foi marcada pela luz do amor fraterno, pela arte, pela alegria e pelo exemplo de humanidade.
         </p>
-        <h3>Nosso Rito</h3>
+        {/* <h3>Nosso Rito</h3>
         <p>
           Rito Schröder (em alemão: Schrödersche Lehrart). Este é um ritual maçônico utilizado por várias lojas na Alemanha. Criado por Friedrich Ulrich Ludwig Schröder e submetido aos Mestres de Hamburgo em 29 de junho de 1801, que o adotaram por unanimidade, desde logo, conquistou numerosas Lojas em toda a Alemanha e em outros países, onde passou a ser praticado, principalmente, por maçons de origem alemã e logo recebeu o cognome de seu fundador, rito schröder.
         </p>
@@ -174,7 +174,7 @@ function Inicio() {
         </p>
         <p>
           Schröder se baseou em manuscritos ingleses tais como "Três batidas distintas" e "Maçonaria dissecada". Estudou vários ritos europeus e aboliu os chamados altos graus, aproximando-se da filosofia dos Modernos. Schröder e sua comissão ritualística obtiveram grande aceitação da maçonaria alemã ao seu rito, de caráter humanista e rara beleza.
-        </p>
+        </p> */}
       </section>
 
       <section id="rito" style={{scrollMarginTop: '80px'}}>
