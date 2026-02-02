@@ -237,30 +237,88 @@ function Inicio() {
 
       <section id="contato" style={{scrollMarginTop: '80px'}}>
         <div className="form-section">
-        <h2>Quero ser candidato</h2>
-        <p>Preencha o formulário abaixo e envie sua intenção via WhatsApp para nossa equipe.</p>
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <label>
-            Nome
-            <input type="text" value={name} onChange={e => setName(e.target.value)} required />
-          </label>
-          <label>
-            Idade
-            <input type="number" value={age} onChange={e => setAge(e.target.value)} required min={16} />
-          </label>
-          <label>
-            Cidade
-            <input type="text" value={city} onChange={e => setCity(e.target.value)} required />
-          </label>
-          <label>
-            Mensagem (opcional)
-            <textarea value={message} onChange={e => setMessage(e.target.value)} placeholder="Escreva algo sobre seu interesse..." />
-          </label>
-          <div className="actions">
-            <button type="submit" className="btn-primary">Enviar via WhatsApp</button>
-            <a className="btn-secondary" href={`https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, '')}`} target="_blank" rel="noreferrer">Abrir conversa</a>
+          <h2>Quero ser candidato</h2>
+          <p className="form-intro">Preencha o formulário abaixo e envie sua intenção via WhatsApp para nossa equipe. Visite nosso templo localizado em Recife.</p>
+          
+          <div className="form-container">
+            {/* Coluna do Formulário */}
+            <div className="form-column">
+              <form className="contact-form" onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <label htmlFor="nome">Nome completo</label>
+                  <input 
+                    id="nome"
+                    type="text" 
+                    value={name} 
+                    onChange={e => setName(e.target.value)} 
+                    placeholder="Seu nome"
+                    required 
+                  />
+                </div>
+
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="idade">Idade</label>
+                    <input 
+                      id="idade"
+                      type="number" 
+                      value={age} 
+                      onChange={e => setAge(e.target.value)} 
+                      placeholder="18"
+                      required 
+                      min={16} 
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="cidade">Cidade</label>
+                    <input 
+                      id="cidade"
+                      type="text" 
+                      value={city} 
+                      onChange={e => setCity(e.target.value)} 
+                      placeholder="Sua cidade"
+                      required 
+                    />
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="mensagem">Mensagem (opcional)</label>
+                  <textarea 
+                    id="mensagem"
+                    value={message} 
+                    onChange={e => setMessage(e.target.value)} 
+                    placeholder="Conte-nos sobre seu interesse na Maçonaria..."
+                  />
+                </div>
+
+                <div className="actions">
+                  <button type="submit" className="btn-primary">
+                    📱 Enviar via WhatsApp
+                  </button>
+                  <a className="btn-secondary" href={`https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, '')}`} target="_blank" rel="noreferrer">
+                    💬 Abrir conversa
+                  </a>
+                </div>
+              </form>
+            </div>
+
+            {/* Coluna do Mapa */}
+            <div className="map-column">
+              <div className="map-header">
+                <h3>📍 Localização do Templo</h3>
+                <p className="address-info">R. Profa. Ângela Pinto, 70 - Torre<br/>Recife - PE, 50710-010</p>
+              </div>
+              <iframe 
+                className="google-map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3936.4845682647467!2d-34.918194!3d-8.038975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1901c0ade589%3A0x4e4e4e4e4e4e4e4e!2sR.%20Profa.%20%C3%82ngela%20Pinto%2C%2070%20-%20Torre%2C%20Recife%20-%20PE%2C%2050710-010!5e0!3m2!1spt-BR!2sbr!4v1675000000000"
+                title="Localização da Loja Maçônica Flaviano Mendes"
+                allowFullScreen="" 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
           </div>
-        </form>
         </div>
       </section>
       <footer className="inicio-footer" style={{marginTop:40, padding:'32px 0 16px 0', background:'#f7f7f7', display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'center', gap:32}}>
