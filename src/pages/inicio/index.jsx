@@ -3,21 +3,40 @@ import './style.css';
 import videoBg from "../../assets/video.mp4";
 import logo from "../../assets/fmo.png";
 import grande from "../../assets/grande .png";
-import sessao1 from "../../assets/banner/loja-maconico-flaviano-sessao-1.jpg";
-import veneravelMestre from "../../assets/Veneravel Metre - Daniel.png";
-import primeiroVigilante from "../../assets/primeiro vigilante - Andre Felix.png";
+import veneravelMestre from "../../assets/Veneravel Metre - Daniel.jpeg";
+import primeiroVigilante from "../../assets/primeiro vigilante - Andre Felix.jpeg";
 import segundoVigilante from "../../assets/segundo vigilandte - Alamy Neto.png";
 
+import banner1 from "../../assets/banner/loja-maconico-flaviano-ritual-1.png";
+import banner2 from "../../assets/banner/loja-maconico-flaviano-ritual-2.png";
+import banner3 from "../../assets/banner/loja-maconico-flaviano-ritual-3.png";
+import banner4 from "../../assets/banner/loja-maconico-flaviano-ritual-4.png";
+import banner5 from "../../assets/banner/loja-maconico-flaviano-ritual-5.png";
+import banner6 from "../../assets/banner/loja-maconico-flaviano-ritual-6.png";
+import banner7 from "../../assets/banner/loja-maconico-flaviano-ritual-7.png";
+import banner8 from "../../assets/banner/loja-maconico-flaviano-ritual-8.png";
+import banner9 from "../../assets/banner/loja-maconico-flaviano-ritual-9.png";
+import bannerRitual from "../../assets/banner/loja-maconico-flaviano-ritual.jpg";
+import bannerRitualPng from "../../assets/banner/loja-maconico-flaviano-ritual.png";
+import sessao1 from "../../assets/banner/loja-maconico-flaviano-sessao-1.jpg";
 import sessao3 from "../../assets/banner/loja-maconico-flaviano-sessao-3.jpg";
-import ritual from "../../assets/banner/loja-maconico-flaviano-ritual.jpg";
 
 const WHATSAPP_NUMBER = '+5581999712812'; // target number
 
 const bannerImages = [
-  { id: 1, src: sessao1, alt: 'Sessão Maçônica Flaviano Mendes - Ritual de Aprendiz' },
-  { id: 2, src: sessao3, alt: 'Rito Schröder - Loja Flaviano Mendes - Trabalhos Maçônicos' },
-  { id: 3, src: ritual, alt: 'Ritual Maçônico - Loja Flaviano Mendes de Oliveira Nº 43' },
-  { id: 4, src: sessao1, alt: 'Sessão Maçônica Flaviano Mendes - Ritual de Aprendiz' },
+  { id: 1, src: banner1, alt: 'Loja Maçônica Flaviano Mendes - Imagem 1' },
+  { id: 2, src: banner2, alt: 'Loja Maçônica Flaviano Mendes - Imagem 2' },
+  { id: 3, src: banner3, alt: 'Loja Maçônica Flaviano Mendes - Imagem 3' },
+  { id: 4, src: banner4, alt: 'Loja Maçônica Flaviano Mendes - Imagem 4' },
+  { id: 5, src: banner5, alt: 'Loja Maçônica Flaviano Mendes - Imagem 5' },
+  { id: 6, src: banner6, alt: 'Loja Maçônica Flaviano Mendes - Imagem 6' },
+  { id: 7, src: banner7, alt: 'Loja Maçônica Flaviano Mendes - Imagem 7' },
+  { id: 8, src: banner8, alt: 'Loja Maçônica Flaviano Mendes - Imagem 8' },
+  { id: 9, src: banner9, alt: 'Loja Maçônica Flaviano Mendes - Imagem 9' },
+  { id: 10, src: bannerRitual, alt: 'Ritual Maçônico - Loja Flaviano Mendes de Oliveira Nº 43' },
+  { id: 11, src: bannerRitualPng, alt: 'Loja Maçônica Flaviano Mendes - Ritual em PNG' },
+  { id: 12, src: sessao1, alt: 'Sessão Maçônica Flaviano Mendes - Ritual de Aprendiz' },
+  { id: 13, src: sessao3, alt: 'Rito Schröder - Loja Flaviano Mendes - Trabalhos Maçônicos' },
 ];
 
 function encodeWhatsAppMessage(text) {
@@ -31,6 +50,7 @@ function Inicio() {
   const [message, setMessage] = useState('');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -81,15 +101,16 @@ function Inicio() {
             aria-label="Alternar menu"
             aria-expanded={menuOpen}
           >
-            <span />
-            <span />
-            <span />
+            <span className="hamburger-line" />
+            <span className="hamburger-line" />
+            <span className="hamburger-line" />
           </button>
 
           <nav className={`navbar-menu ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(false)}>
             <a href="#inicio" className="nav-link">Início</a>
             <a href="#historia" className="nav-link">História</a>
             <a href="#rito" className="nav-link">O Rito</a>
+            <a href="#galeria" className="nav-link">Galeria de fotos</a>
             <a href="#gestao" className="nav-link">Gestão</a>
             <a href="#contato" className="nav-link">Contato</a>
           </nav>
@@ -260,6 +281,27 @@ function Inicio() {
         </div>
       </section>
 
+      <section id="galeria" className="galeria-section">
+        <div className="galeria-header">
+          <h2>Galeria de fotos</h2>
+          <p className="section-subtitle">Momentos da nossa Loja Maçônica e do Rito Schröder</p>
+        </div>
+
+        <div className="galeria-grid">
+          {bannerImages.map((image) => (
+            <button
+              key={image.id}
+              type="button"
+              className="galeria-item"
+              onClick={() => setSelectedImage(image)}
+              aria-label={`Abrir imagem ${image.alt}`}
+            >
+              <img src={image.src} alt={image.alt} />
+            </button>
+          ))}
+        </div>
+      </section>
+
       <section id="contato" style={{scrollMarginTop: '80px'}}>
         <div className="form-section">
           <h2>Quero ser candidato</h2>
@@ -357,6 +399,22 @@ function Inicio() {
           wer ist da?
         </button>
       </footer>
+
+      {selectedImage && (
+        <div className="gallery-modal open" onClick={() => setSelectedImage(null)}>
+          <div className="gallery-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className="gallery-modal-close"
+              onClick={() => setSelectedImage(null)}
+              aria-label="Fechar imagem"
+            >
+              ×
+            </button>
+            <img src={selectedImage.src} alt={selectedImage.alt} />
+          </div>
+        </div>
+      )}
       </main>
     </>
   );

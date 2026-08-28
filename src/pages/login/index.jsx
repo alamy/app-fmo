@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import usuarios from '../../usuarios.json';
 import './style.css';
 import logo from '../../assets/fmo.png';
-import sala from '../../assets/bg-img.jpg';
+
 
 
 function Login({ onLogin }) {
@@ -62,7 +62,7 @@ function Login({ onLogin }) {
           </div>}
           <button type="submit" className="login-btn">Wer ist da?</button>
         </form>
-        <img src={sala} alt="Sala Maçônica" className="login-img" />
+       
         <div className="login-copyright">&copy; 2017-2025</div>
       </div>
     </div>
