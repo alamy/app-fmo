@@ -219,7 +219,7 @@ function Inicio() {
                 <img src={veneravelMestre} alt="Daniel - Venerável Mestre" />
               </div>
               <h3>Venerável Mestre</h3>
-              <p className="card-name">Daniel</p>
+              <p className="card-name">Daniel Figueiredo</p>
             </div>
 
             <div className="card">
