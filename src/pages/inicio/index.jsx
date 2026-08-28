@@ -4,6 +4,9 @@ import videoBg from "../../assets/video.mp4";
 import logo from "../../assets/fmo.png";
 import grande from "../../assets/grande .png";
 import sessao1 from "../../assets/banner/loja-maconico-flaviano-sessao-1.jpg";
+import veneravelMestre from "../../assets/Veneravel Metre - Daniel.png";
+import primeiroVigilante from "../../assets/primeiro vigilante - Andre Felix.png";
+import segundoVigilante from "../../assets/segundo vigilandte - Alamy Neto.png";
 
 import sessao3 from "../../assets/banner/loja-maconico-flaviano-sessao-3.jpg";
 import ritual from "../../assets/banner/loja-maconico-flaviano-ritual.jpg";
@@ -27,6 +30,7 @@ function Inicio() {
   const [city, setCity] = useState('');
   const [message, setMessage] = useState('');
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -70,7 +74,19 @@ function Inicio() {
             <img src={logo} alt="Logo" className="logo-pequena" />
             <span>Flaviano Mendes Nº 43</span>
           </div>
-          <nav className="navbar-menu">
+
+          <button
+            className={`hamburger ${menuOpen ? 'open' : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Alternar menu"
+            aria-expanded={menuOpen}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+
+          <nav className={`navbar-menu ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(false)}>
             <a href="#inicio" className="nav-link">Início</a>
             <a href="#historia" className="nav-link">História</a>
             <a href="#rito" className="nav-link">O Rito</a>
@@ -78,6 +94,7 @@ function Inicio() {
             <a href="#contato" className="nav-link">Contato</a>
           </nav>
         </div>
+        <div className={`menu-overlay ${menuOpen ? 'show' : ''}`} onClick={() => setMenuOpen(false)} />
       </header>
 
       <main className="inicio-container">
@@ -194,25 +211,33 @@ function Inicio() {
 
       <section id="gestao" style={{scrollMarginTop: '80px'}}>
         <div className="gestao-section">
-        <h2>Nossa Gestão Atual</h2>
-        <p className="section-subtitle">Conheça os dirigentes de nossa Loja</p>
-        <div className="gestao-cards">
-          <div className="card">
-            <div className="card-initials">VM</div>
-            <h3>Venerável Mestre</h3>
-            <p className="card-name">Jonas Adriano</p>
+          <h2>Nossa Gestão Atual</h2>
+          <p className="section-subtitle">Conheça os dirigentes de nossa Loja</p>
+          <div className="gestao-cards">
+            <div className="card">
+              <div className="card-photo">
+                <img src={veneravelMestre} alt="Daniel - Venerável Mestre" />
+              </div>
+              <h3>Venerável Mestre</h3>
+              <p className="card-name">Daniel</p>
+            </div>
+
+            <div className="card">
+              <div className="card-photo">
+                <img src={primeiroVigilante} alt="André Felix - 1º Vigilante" />
+              </div>
+              <h3>1º Vigilante</h3>
+              <p className="card-name">André Felix</p>
+            </div>
+
+            <div className="card">
+              <div className="card-photo">
+                <img src={segundoVigilante} alt="Alamy Neto - 2º Vigilante" />
+              </div>
+              <h3>2º Vigilante</h3>
+              <p className="card-name">Alamy Neto</p>
+            </div>
           </div>
-          <div className="card">
-            <div className="card-initials">1V</div>
-            <h3>1º Vigilante</h3>
-            <p className="card-name">Walmir Soares</p>
-          </div>
-          <div className="card">
-            <div className="card-initials">2V</div>
-            <h3>2º Vigilante</h3>
-            <p className="card-name">Anderson</p>
-          </div>
-        </div>
         </div>
       </section>
 

@@ -76,6 +76,40 @@ html, body {
   align-items: center;
 }
 
+/* Hamburger button (hidden on desktop) */
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--marfim-nobre);
+  margin: 4px 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* Overlay shown when mobile menu open */
+.menu-overlay { display: none; }
+.menu-overlay.show {
+  display: block;
+  position: fixed;
+  inset: 70px 0 0 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 900;
+}
+
 .nav-link {
   color: var(--marfim-nobre);
   text-decoration: none;
@@ -595,19 +629,22 @@ html, body {
   transform: translateY(-6px);
 }
 
-.card-initials {
-  width: 64px;
-  height: 64px;
-  background: linear-gradient(135deg, var(--azul-maconico-profundo), var(--azul-real-refinado));
-  color: var(--dourado-ritual);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  font-weight: 700;
+.card-photo {
+  width: 120px;
+  height: 120px;
   margin: 0 auto 16px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--dourado-ritual);
+  background: linear-gradient(135deg, var(--azul-maconico-profundo), var(--azul-real-refinado));
   box-shadow: 0 4px 12px rgba(30, 47, 91, 0.2);
+}
+
+.card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .card h3 {
@@ -739,6 +776,38 @@ html, body {
   }
 }
 
+/* Mobile menu behaviour */
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+
+  .navbar-menu {
+    position: absolute;
+    top: 70px;
+    left: 12px;
+    right: 12px;
+    background: linear-gradient(180deg, rgba(30,47,91,0.98), rgba(47,78,133,0.98));
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 16px;
+    gap: 12px;
+    display: none;
+    z-index: 950;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+  }
+
+  .navbar-menu.open {
+    display: flex;
+  }
+
+  .nav-link {
+    display: block;
+    color: var(--marfim-nobre);
+    padding: 10px 12px;
+    border-radius: 8px;
+    text-align: center;
+  }
+}
+
 @media (max-width: 480px) {
   .navbar-menu {
     gap: 8px;
@@ -760,4 +829,84 @@ html, body {
   .inicio-container {
     margin-top: 0;
   }
+}
+
+/* Mobile enhancements - improve touch targets, spacing and stacking */
+@media (max-width: 480px) {
+  /* Navbar: stack and increase tappable area */
+  .navbar {
+    padding: 8px 12px;
+  }
+
+  .navbar-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+
+  .navbar-logo {
+    justify-content: center;
+    gap: 8px;
+    color: var(--marfim-nobre);
+  }
+
+  .navbar-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .nav-link {
+    display: inline-block;
+    padding: 10px 14px;
+    font-size: 0.92rem;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.04);
+    -webkit-tap-highlight-color: rgba(0,0,0,0.05);
+  }
+
+  /* Carousel: reduce control sizes and ensure image covers */
+  .carousel-btn {
+    padding: 8px 10px;
+    font-size: 18px;
+    background: rgba(212,175,55,0.95);
+  }
+
+  .carousel-dots { bottom: 12px; }
+
+  /* Hero: reduce padding and heading sizes for small screens */
+  .hero { padding: 18px; }
+  .hero-inner .lead { font-size: 0.95rem; }
+  .hero-logos img { height: 64px !important; }
+  .hero-inner h1 { font-size: 1.2rem !important; }
+
+  /* Form / Map: stack (already single column) and increase input sizes */
+  .form-column, .map-column {
+    padding: 18px;
+    box-shadow: none;
+  }
+
+  .google-map { height: 300px; }
+
+  .contact-form input, .contact-form textarea {
+    padding: 12px 14px;
+    font-size: 1rem;
+  }
+
+  .actions { flex-direction: column; }
+  .btn-primary, .btn-secondary { width: 100%; }
+
+  /* Footer: stack vertically and center */
+  .inicio-footer {
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 12px;
+  }
+
+  .inicio-footer img { height: 48px; }
+
+  /* Reduce large fixed-height elements to avoid overflow */
+  .carousel-container, .carousel-slide img { height: calc(100vh - 110px); }
 }
