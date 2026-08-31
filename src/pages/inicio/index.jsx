@@ -112,6 +112,7 @@ function Inicio() {
             <a href="#rito" className="nav-link">O Rito</a>
             <a href="#galeria" className="nav-link">Galeria de fotos</a>
             <a href="#gestao" className="nav-link">Gestão</a>
+            <a href="https://flavianomendesdeoliveira43.blogspot.com" className="nav-link" target="_blank" rel="noreferrer">Blog</a>
             <a href="#contato" className="nav-link">Contato</a>
           </nav>
         </div>
